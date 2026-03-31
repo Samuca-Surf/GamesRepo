@@ -37,7 +37,7 @@
                     <!-- Formulário de busca -->
                     <form class="d-flex me-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Em desenvolvimento" aria-label="Search"/>
-                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                        <button class="btn btn-outline-success" type="submit" onclick="mensagemDev()">Pesquisar</button>
                     </form>
 
                     <!-- Botão de tema -->
@@ -141,6 +141,11 @@
 </style>
 
 <script>
+    function mensagemDev() {
+        alert("Ainda em desenvolvimento")
+    }
+
+
   const darkOption = document.getElementById('darkOption');
   const lightOption = document.getElementById('lightOption');
 
