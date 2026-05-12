@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betinha Survivor</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+    }
+
+    .section-box {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .screenshot-placeholder {
+      background: #2a2a2a;
+      border: 2px dashed #555;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./controller.svg" alt="" width="50" height="50">
+                    Games Repository
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="./jogos.html">Jogos</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" href="https://samuca-surf.github.io">Ir para portfolio</a>
+                        </li>
+                    </ul>
+
+                    <!-- Formulário de busca -->
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Em desenvolvimento" aria-label="Search"/>
+                        <button class="btn btn-outline-success" type="submit" onclick="mensagemDev()">Pesquisar</button>
+                    </form>
+
+                    <!-- Botão de tema -->
+                    <div id="themeSelector" class="d-flex align-items-center gap-2">
+                        <div class="theme-option" id="darkOption">
+                                🌙
+                            <div class="indicator"></div>
+                        </div>
+                        <div class="theme-option" id="lightOption">
+                                ☀️
+                            <div class="indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="text-center p-4">
+            <h1>🎮 Betinha Survivor</h1>
+            <p class="text-secondary">Roguelike de ação top-down em desenvolvimento</p>
+        </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- DEVLOG (ESQUERDA) -->
+    <div class="col-lg-3">
+        <div class="section-box">
+
+            <h4 class="title">🛠 Devlog</h4>
+
+            <p class="text-secondary small">
+            Atualizações do desenvolvimento do jogo aparecerão aqui.
+            </p>
+
+            <hr class="border-secondary">
+
+            <!-- Highlight de próxima atualização -->
+            <div class="devlog-highlight mb-3">
+            <div class="p-3 rounded-3 bg-dark border border-secondary">
+                <div class="text-warning fw-bold mb-1">
+                🔥 Próxima atualização
+                </div>
+
+                <div class="text-light small">
+                O inimigo <strong>"Zé da Moto"</strong> será adicionado em breve!
+                </div>
+            </div>
+            </div>
+
+            <!-- Estado vazio (mais elegante) -->
+            <div class="text-center text-secondary mt-3">
+            <div style="font-size: 2rem;">📓</div>
+            <div class="small mt-2">
+                Nenhum devlog publicado ainda
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+      <!-- SOBRE O JOGO (CENTRO) -->
+      <div class="col-lg-6">
+        <div class="section-box">
+          <h4 class="title">🎯 Sobre o jogo</h4>
+
+          <p>
+            <strong>Betinha Survivor</strong> é um jogo roguelike de ação com visão top-down.
+            Enfrente ondas de inimigos cada vez mais difíceis e sobreviva o máximo possível.
+          </p>
+
+          <p>
+            O jogo está em desenvolvimento e receberá novas mecânicas, inimigos e melhorias constantes.
+          </p>
+
+          <ul>
+            <li>🎮 Gênero: Roguelike / Action / Shooter</li>
+            <li>💻 Plataforma: HTML5 / Windows</li>
+            <li>⚙️ Status: Em desenvolvimento</li>
+          </ul>
+
+          <hr>
+
+          <div class="mt-auto">
+                <a href="https://samuca-surf.itch.io/betinha-survivor" target="_blank" class="btn btn-primary w-100 mb-2">
+                    Jogar Demo/Beta pelo itch.io
+                </a>
+                <a href="./exes/Setup_BetinhaSurvivors.exe" target="_blank" class="btn btn-primary w-100">
+                    Baixar Demo/Beta
+                </a>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- SCREENSHOTS (DIREITA) -->
+      <div class="col-lg-3">
+        <div class="section-box">
+          <h4 class="title">📸 Screenshots</h4>
+
+          <div class="screenshot-placeholder">
+            Screenshot 1 (em breve)
+          </div>
+
+          <div class="screenshot-placeholder">
+            Screenshot 2 (em breve)
+          </div>
+
+          <div class="screenshot-placeholder">
+            Screenshot 3 (em breve)
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- HISTÓRICO DE ATUALIZAÇÕES -->
+    <div class="container mt-5">
+        <div class="section-box">
+
+            <h4 class="title">📜 Histórico de Atualizações</h4>
+
+            <div class="text-secondary small mb-3">
+            Registro de versões do jogo e mudanças principais.
+            </div>
+
+            <!-- Update 1 -->
+            <div class="card bg-dark border border-secondary mb-3">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between flex-wrap">
+                <h5 class="text-light mb-1">v0.1.0 - Protótipo inicial</h5>
+                <span class="text-secondary small">14/02/2026</span>
+                </div>
+
+                <hr class="border-secondary">
+
+                <ul class="text-secondary mb-0">
+                <li>Sistema básico de movimentação</li>
+                <li>Primeiro inimigo implementado</li>
+                <li>Mapa inicial simples</li>
+                </ul>
+
+            </div>
+            </div>
+
+            <!-- Update 2 
+            <div class="card bg-dark border border-secondary mb-3">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between flex-wrap">
+                <h5 class="text-light mb-1">v0.1.1 - Combate inicial</h5>
+                <span class="text-secondary small">02/03/2026</span>
+                </div>
+
+                <hr class="border-secondary">
+
+                <ul class="text-secondary mb-0">
+                <li>Sistema de tiro adicionado</li>
+                <li>IA inimiga melhorada</li>
+                <li>Correções de colisão</li>
+                </ul>
+
+            </div>
+            </div>
+            -->
+            <!-- Update futuro -->
+            <div class="card bg-dark border border-secondary">
+            <div class="card-body text-center">
+
+                <div class="text-warning fw-bold">
+                🔜 Próxima versão: v0.2.0
+                </div>
+
+                <div class="text-secondary small mt-1">
+                    Novos inimigos, melhorias para o player e efeitos visuais
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 p-3 text-secondary">
+    © 2026 Betinha Survivor - Desenvolvido por Samuel Mesquita
+  </footer>
+
+</body>
+</html>

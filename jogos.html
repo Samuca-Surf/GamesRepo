@@ -64,7 +64,7 @@
             <div class="row justify-content-center">
                 <!-- Card do Betinha Survivor -->
                 <div class="col-md-6 col-lg-4 mb-4" data-bs-theme="dark">
-                    <div class="card h-100">
+                    <div class="card h-100" data-link="./betinha-survivors.html">
                         <img src="./betinhaSurvivors-thumbnail.png" class="card-img-top" alt="Betinha Survivor Thumbnail" height="300">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Betinha Survivor</h5>
@@ -138,6 +138,16 @@
   .theme-option span, .theme-option {
     z-index: 1; /* emoji acima do círculo */
   }
+
+  .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
 </style>
 
 <script>
@@ -185,4 +195,11 @@
 
     // Opcional: recalcula todo dia (em milissegundos)
     setInterval(updateDaysAgo, 1000 * 60 * 60 * 24);
+
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function (e) {
+            window.location.href = this.dataset.link;
+        });
+    });
 </script>
