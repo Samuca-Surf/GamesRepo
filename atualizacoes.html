@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Betinha Survivor - Atualizações</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* ==============================
+           CONFIGURAÇÕES GERAIS
+        ============================== */
+
+        body {
+            background: #0f0f10;
+            color: white;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .navbar {
+            border-bottom: 1px solid #292929;
+            background: #151516 !important;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand:hover img {
+            transform: rotate(-8deg) scale(1.05);
+        }
+
+        .nav-link {
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .page-header {
+            padding: 70px 20px 55px;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #24242a 0%,
+                    #151516 45%,
+                    #0f0f10 100%
+                );
+
+            border-bottom: 1px solid #292929;
+        }
+
+        .page-header h1 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            color: #999;
+            max-width: 650px;
+            margin: auto;
+            font-size: 1.05rem;
+        }
+
+
+        /* ==============================
+           CONTAINER
+        ============================== */
+
+        .updates-container {
+            max-width: 1050px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+
+        /* ==============================
+           TÍTULO DA SEÇÃO
+        ============================== */
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .section-title-line {
+            flex: 1;
+            height: 1px;
+            background: #303030;
+        }
+
+
+        /* ==============================
+           POST DE ATUALIZAÇÃO
+        ============================== */
+
+        .update-post {
+            background: linear-gradient(
+                145deg,
+                #1b1b1d,
+                #151516
+            );
+
+            border: 1px solid #303034;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            margin-bottom: 35px;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.35);
+
+            transition:
+                transform 0.25s,
+                border-color 0.25s,
+                box-shadow 0.25s;
+        }
+
+        .update-post:hover {
+            transform: translateY(-3px);
+
+            border-color: #48484d;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* ==============================
+           CABEÇALHO DO POST
+        ============================== */
+
+        .update-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 20px;
+
+            margin-bottom: 18px;
+        }
+
+        .update-version {
+            display: inline-block;
+
+            background: #29292d;
+
+            border: 1px solid #444;
+
+            color: #fff;
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            padding: 5px 10px;
+
+            border-radius: 7px;
+
+            margin-bottom: 10px;
+        }
+
+        .update-title {
+            font-size: 1.55rem;
+
+            font-weight: 750;
+
+            margin: 0;
+        }
+
+        .update-date {
+            color: #858585;
+
+            font-size: 0.9rem;
+
+            white-space: nowrap;
+        }
+
+
+        /* ==============================
+           DESCRIÇÃO
+        ============================== */
+
+        .update-description {
+            color: #b5b5b5;
+
+            line-height: 1.7;
+
+            font-size: 0.98rem;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ==============================
+           TAGS
+        ============================== */
+
+        .update-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 25px;
+        }
+
+        .update-tag {
+            background: #222225;
+
+            border: 1px solid #36363a;
+
+            color: #aaa;
+
+            font-size: 0.75rem;
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+        }
+
+
+        /* ==============================
+           SEÇÕES INTERNAS
+        ============================== */
+
+        .update-section {
+            margin-top: 25px;
+        }
+
+        .update-section h4 {
+            font-size: 1.05rem;
+
+            font-weight: 700;
+
+            margin-bottom: 13px;
+
+            color: #eee;
+        }
+
+
+        /* ==============================
+           LISTA DE ALTERAÇÕES
+        ============================== */
+
+        .changes-list {
+            padding-left: 20px;
+
+            color: #aaa;
+
+            margin-bottom: 0;
+        }
+
+        .changes-list li {
+            margin-bottom: 8px;
+
+            line-height: 1.5;
+        }
+
+        .changes-list li::marker {
+            color: #777;
+        }
+
+
+        /* ==============================
+           SCREENSHOTS
+        ============================== */
+
+        .screenshots-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .screenshot {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 11px;
+
+            border: 1px solid #353539;
+
+            background: #111;
+
+            cursor: pointer;
+        }
+
+        .screenshot img {
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.35s,
+                filter 0.35s;
+        }
+
+        .screenshot:hover img {
+            transform: scale(1.06);
+
+            filter: brightness(0.7);
+        }
+
+        .screenshot::after {
+            content: "🔍";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.7);
+
+            opacity: 0;
+
+            font-size: 1.5rem;
+
+            transition: 0.25s;
+
+            pointer-events: none;
+        }
+
+        .screenshot:hover::after {
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1);
+        }
+
+
+        /* ==============================
+           INFORMAÇÕES EXTRAS
+        ============================== */
+
+        .update-info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .info-box {
+            background: #19191b;
+
+            border: 1px solid #303034;
+
+            border-radius: 10px;
+
+            padding: 13px 15px;
+        }
+
+        .info-label {
+            color: #777;
+
+            font-size: 0.72rem;
+
+            text-transform: uppercase;
+
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            color: #ddd;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           SEPARADOR
+        ============================== */
+
+        .update-divider {
+            border: 0;
+
+            border-top: 1px solid #303030;
+
+            margin: 25px 0;
+        }
+
+
+        /* ==============================
+           PRÓXIMA ATUALIZAÇÃO
+        ============================== */
+
+        .next-update {
+            background: linear-gradient(
+                145deg,
+                #1c1c1f,
+                #151516
+            );
+
+            border: 1px dashed #414145;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            margin-top: 45px;
+        }
+
+        .next-update h4 {
+            font-size: 1.1rem;
+
+            margin-bottom: 8px;
+        }
+
+        .next-update p {
+            color: #888;
+
+            margin: 0;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            border-top: 1px solid #292929;
+
+            margin-top: 70px;
+
+            padding: 25px;
+
+            color: #666;
+
+            text-align: center;
+
+            font-size: 0.85rem;
+        }
+
+
+        /* ==============================
+           MODAL
+        ============================== */
+
+        .modal-content {
+            background: #161617;
+
+            border: 1px solid #363638;
+
+            border-radius: 15px;
+        }
+
+        .modal-body {
+            padding: 8px;
+        }
+
+        .modal-body img {
+            width: 100%;
+
+            border-radius: 10px;
+        }
+
+        .btn-close {
+            filter: invert(1);
+
+            position: absolute;
+
+            right: 15px;
+            top: 15px;
+
+            z-index: 5;
+        }
+
+
+        /* ==============================
+           RESPONSIVIDADE
+        ============================== */
+
+        @media (max-width: 768px) {
+
+            .page-header h1 {
+                font-size: 2.1rem;
+            }
+
+            .update-post {
+                padding: 20px;
+            }
+
+            .update-header {
+                flex-direction: column;
+            }
+
+            .update-date {
+                white-space: normal;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .update-info {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVBAR
+========================================== -->
+
+<nav class="navbar navbar-expand-lg"
+     data-bs-theme="dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand"
+           href="./index.html">
+
+            <img
+                src="./controller.svg"
+                alt=""
+                width="45"
+                height="45"
+            >
+
+            Games Repository
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+        >
+
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="./index.html"
+                    >
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-3">
+
+                    <a
+                        class="nav-link"
+                        href="./jogos.html"
+                    >
+                        Jogos
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-3">
+
+                    <a
+                        class="nav-link active"
+                        href="./atualizacoes.html"
+                    >
+                        Atualizações
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-3">
+
+                    <a
+                        class="nav-link"
+                        href="https://samuca-surf.github.io"
+                    >
+                        Portfólio
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="page-header">
+
+    <h1>
+        🛠️ Devlog & Atualizações
+    </h1>
+
+    <p>
+        Acompanhe o desenvolvimento do Betinha Survivor,
+        confira as novidades, mudanças, correções e melhorias
+        adicionadas a cada versão.
+    </p>
+
+</header>
+
+
+
+<!-- ==========================================
+     CONTEÚDO
+========================================== -->
+
+<main class="updates-container">
+
+
+    <div class="section-title">
+
+        <h2>
+            📜 Histórico de atualizações
+        </h2>
+
+        <div class="section-title-line"></div>
+
+    </div>
+
+
+
+    <!-- ======================================
+         UPDATE 0.2.0
+    ======================================= -->
+
+    <article class="update-post">
+
+
+        <!-- Cabeçalho -->
+
+        <div class="update-header">
+
+            <div>
+
+                <div class="update-version">
+                    v0.2.0
+                </div>
+
+                <h3 class="update-title">
+                    Novos inimigos e melhorias
+                </h3>
+
+            </div>
+
+
+            <div class="update-date">
+                📅 02/09/2026
+            </div>
+
+        </div>
+
+
+
+        <!-- Descrição -->
+
+        <p class="update-description">
+
+            Esta atualização adiciona novos conteúdos ao
+            Betinha Survivor, trazendo um novo inimigo, e ajustes gerais para
+            tornar mais dificil.
+
+        </p>
+
+
+
+        <!-- Tags -->
+
+        <div class="update-tags">
+
+            <span class="update-tag">
+                ⚔️ Combate
+            </span>
+
+            <span class="update-tag">
+                👾 Inimigos
+            </span>
+
+            <span class="update-tag">
+                🎮 Gameplay
+            </span>
+
+            <!--
+            <span class="update-tag">
+                ✨ Efeitos
+            </span>
+             -->
+
+        </div>
+
+
+
+        <hr class="update-divider">
+
+
+
+        <!-- Alterações -->
+
+        <div class="update-section">
+
+            <h4>
+                ✨ Principais alterações
+            </h4>
+
+            <ul class="changes-list">
+
+                <li>
+                    Novo inimigo adicionado ao jogo.
+                </li>
+
+                <li>
+                    Melhorias no sistema de combate.
+                </li>
+
+                <li>
+                    Ajustes na movimentação do jogador.
+                </li>
+
+                <!--
+                <li>
+                    Novos efeitos visuais.
+                </li>
+                -->
+
+                <li>
+                    Correções no sistema de colisão.
+                </li>
+
+                <li>
+                    Melhorias na inteligência dos inimigos.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- Screenshots -->
+
+        <div class="update-section">
+
+            <h4>
+                <img src="./img/camera.png" alt="Camera" width="20" height="20"> Screenshots
+            </h4>
+
+
+            <div class="screenshots-grid">
+
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/Captura de tela 2026-09-02 164052.png')"
+                >
+
+                    <img
+                        src="./screenshots/Captura de tela 2026-09-02 164052.png"
+                        alt="Screenshot da versão 0.2.0"
+                    >
+
+                </div>
+
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/Captura de tela 2026-09-02 164138.png')"
+                >
+
+                    <img
+                        src="./screenshots/Captura de tela 2026-09-02 164138.png"
+                        alt="Screenshot da versão 0.2.0"
+                    >
+
+                </div>
+
+
+                <!--
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/update-020-3.png')"
+                >
+
+                    <img
+                        src="./screenshots/update-020-3.png"
+                        alt="Screenshot da versão 0.2.0"
+                    >
+
+                </div> -->
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Informações -->
+
+        <div class="update-info">
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Versão
+                </div>
+
+                <div class="info-value">
+                    0.2.0
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Tipo
+                </div>
+
+                <div class="info-value">
+                    Update
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Status
+                </div>
+
+                <div class="info-value">
+                    Disponível a partir de 04/09/2026
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <!-- ======================================
+         UPDATE 0.1.1
+    ======================================= -->
+
+    <!--<article class="update-post">
+
+        <div class="update-header">
+
+            <div>
+
+                <div class="update-version">
+                    v0.1.1
+                </div>
+
+                <h3 class="update-title">
+                    Combate inicial
+                </h3>
+
+            </div>
+
+            <div class="update-date">
+                📅 02/03/2026
+            </div>
+
+        </div>
+
+
+        <p class="update-description">
+
+            Primeira grande implementação do sistema
+            de combate do Betinha Survivor, adicionando
+            o sistema de tiro e melhorias na inteligência
+            dos inimigos.
+
+        </p>
+
+
+        <div class="update-tags">
+
+            <span class="update-tag">
+                ⚔️ Combate
+            </span>
+
+            <span class="update-tag">
+                🎯 Tiro
+            </span>
+
+            <span class="update-tag">
+                🤖 IA
+            </span>
+
+            <span class="update-tag">
+                🐛 Correções
+            </span>
+
+        </div>
+
+
+        <hr class="update-divider">
+
+
+        <div class="update-section">
+
+            <h4>
+                ✨ Principais alterações
+            </h4>
+
+            <ul class="changes-list">
+
+                <li>
+                    Sistema de tiro adicionado.
+                </li>
+
+                <li>
+                    IA dos inimigos melhorada.
+                </li>
+
+                <li>
+                    Correções no sistema de colisão.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="update-section">
+
+            <h4>
+                📸 Screenshots
+            </h4>
+
+            <div class="screenshots-grid">
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/update-011-1.png')"
+                >
+
+                    <img
+                        src="./screenshots/update-011-1.png"
+                        alt="Screenshot da versão 0.1.1"
+                    >
+
+                </div>
+
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/update-011-2.png')"
+                >
+
+                    <img
+                        src="./screenshots/update-011-2.png"
+                        alt="Screenshot da versão 0.1.1"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="update-info">
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Versão
+                </div>
+
+                <div class="info-value">
+                    0.1.1
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Tipo
+                </div>
+
+                <div class="info-value">
+                    Gameplay
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Status
+                </div>
+
+                <div class="info-value">
+                    Disponível
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </article> -->
+
+
+
+    <!-- ======================================
+         UPDATE 0.1.0
+    ======================================= -->
+
+    <!--<article class="update-post">
+
+        <div class="update-header">
+
+            <div>
+
+                <div class="update-version">
+                    v0.1.0
+                </div>
+
+                <h3 class="update-title">
+                    Protótipo inicial
+                </h3>
+
+            </div>
+
+            <div class="update-date">
+                📅 14/02/2026
+            </div>
+
+        </div>
+
+
+        <p class="update-description">
+
+            Primeira versão jogável do Betinha Survivor,
+            estabelecendo a base do projeto e seus principais
+            sistemas de gameplay.
+
+        </p>
+
+
+        <div class="update-tags">
+
+            <span class="update-tag">
+                🎮 Gameplay
+            </span>
+
+            <span class="update-tag">
+                🗺️ Mapa
+            </span>
+
+            <span class="update-tag">
+                👾 Inimigos
+            </span>
+
+        </div>
+
+
+        <hr class="update-divider">
+
+
+        <div class="update-section">
+
+            <h4>
+                ✨ Principais alterações
+            </h4>
+
+            <ul class="changes-list">
+
+                <li>
+                    Sistema básico de movimentação.
+                </li>
+
+                <li>
+                    Primeiro inimigo implementado.
+                </li>
+
+                <li>
+                    Mapa inicial criado.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="update-section">
+
+            <h4>
+                📸 Screenshots
+            </h4>
+
+            <div class="screenshots-grid">
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/update-010-1.png')"
+                >
+
+                    <img
+                        src="./screenshots/update-010-1.png"
+                        alt="Screenshot da versão 0.1.0"
+                    >
+
+                </div>
+
+
+                <div
+                    class="screenshot"
+                    onclick="openScreenshot('./screenshots/update-010-2.png')"
+                >
+
+                    <img
+                        src="./screenshots/update-010-2.png"
+                        alt="Screenshot da versão 0.1.0"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="update-info">
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Versão
+                </div>
+
+                <div class="info-value">
+                    0.1.0
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Tipo
+                </div>
+
+                <div class="info-value">
+                    Protótipo
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-label">
+                    Status
+                </div>
+
+                <div class="info-value">
+                    Disponível
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </article> -->
+
+
+
+    <!-- ======================================
+         PRÓXIMA ATUALIZAÇÃO
+    ======================================= -->
+
+    <div class="next-update">
+
+        <h4>
+            🔜 Próxima atualização
+        </h4>
+
+        <p>
+            Novo inimigo : Chuveiro
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     MODAL SCREENSHOT
+========================================== -->
+
+<div
+    class="modal fade"
+    id="screenshotModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+            ></button>
+
+            <div class="modal-body">
+
+                <img
+                    id="modalScreenshot"
+                    src=""
+                    alt="Screenshot ampliado"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    © 2026 Betinha Survivor
+    - Desenvolvido por Samuel Mesquita
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<script>
+
+    /* ==========================================
+       ABRIR SCREENSHOT
+    ========================================== */
+
+    function openScreenshot(image) {
+
+        document.getElementById(
+            "modalScreenshot"
+        ).src = image;
+
+
+        const modalElement =
+            document.getElementById(
+                "screenshotModal"
+            );
+
+
+        const modal =
+            new bootstrap.Modal(
+                modalElement
+            );
+
+
+        modal.show();
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
